@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"name": "TeamDocumentation",
+			"path": ".."
+		},
+		{
+			"name": "advanced",
+			"path": "../../Fall Training/advanced"
+		},
+		{
+			"name": "background",
+			"path": "../../Fall Training/background"
+		},
+		{
+			"name": "resources",
+			"path": "../../Fall Training/resources"
+		},
+		{
+			"name": "romi",
+			"path": "../../Fall Training/romi"
+		},
+		{
+			"name": "architecture",
+			"path": "../../Fall Training/architecture"
+		}
+	],
+	"settings": {}
+}
