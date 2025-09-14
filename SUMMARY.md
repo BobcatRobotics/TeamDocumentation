@@ -9,7 +9,6 @@ Welcome! This quick start guide will get you set up for FRC Programming Training
 
 ---
 
-
 ## 1️⃣ Install Node.js via Command Line
 
 ### macOS / Linux (Homebrew or package manager) / Windows
@@ -44,13 +43,11 @@ gitbook install
 gitbook serve
 ```
 
-
 # FRC Fall Training - Quick Start
 
 Welcome! This quick start guide will get you set up for FRC Programming Training.
 
 ---
-
 
 # Summary
 
