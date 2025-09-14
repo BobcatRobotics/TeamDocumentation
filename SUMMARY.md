@@ -4,8 +4,8 @@ Welcome! This quick start guide will get you set up for FRC Programming Training
 
 ---
 
-## Project Setup Checklist
-- [Setup Checklist](background/setup-checklist.md)  
+## Installation & Setup Checklist
+- [Setup Checklist](backgroud/setup-checklist-handout.md)
 
 ---
 
