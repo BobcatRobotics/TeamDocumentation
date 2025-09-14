@@ -25,6 +25,11 @@ Before installing WPILib, make sure your computer meets the following requiremen
 
 ⚠️ Note: If you already have a global installation of VS Code or Java, WPILib will not interfere—it installs its own versions in a separate directory.
 
+## Student Checklist
+Each student must download the student checklist from 
+👉 [Student Checklist](setup-checklist-handout.md)
+
+
 ## WPILib Installation
 The easiest way to install WPILib is by following the official setup guide:  
 👉 [WPILib Installation Guide](https://docs.wpilib.org/en/latest/docs/zero-to-robot/step-2/wpilib-setup.html)

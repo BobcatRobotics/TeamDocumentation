@@ -50,3 +50,5 @@
 
 ---
 
+## 🎯 Digital copy available from 
+- download at [Checklist.pdf](setup-checklist-handout.pdf)
