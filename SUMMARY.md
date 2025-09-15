@@ -24,7 +24,7 @@ Welcome! This quick start guide will get you set up for FRC Programming Training
   - [Getting Started with Java Methods](background/PartFour_Methods.md)
   - [Getting Started with Boolean Logic Operations](background/PartFive_BooleanOperators.md)
   - [Getting Started with Comparison Operations](background/PartSix_ComparisonOperators.md)
-  - [if ... else if... else... control flow](Pbackground/PartSeven_IfElseIfElse.md)
+  - [if ... else if... else... control flow](background/PartSeven_IfElseIfElse.md)
   - [Getting Started with Java Classes](background/PartEight_Classes.md)
 - 🔧 [Git Basics](background/git-basics.md)
 - 🌐 [Team Git Workflow](background/team-git-workflow.md)
