@@ -14,10 +14,9 @@ Welcome! This quick start guide will get you set up for FRC Programming Training
 
 ## Background
 - [Gitbooks Installation](background/gitbooks-installation.md)
-- [Application Requirements](background/application-requirements.md)
-  - 🖥️ [WPILib Requirements & Installation](background/application-requirements.md)
+- [WPILib Requirements & Installation](background/application-requirements.md)
+  - ✅ [Setup Checklist](background/setup-setup-checklist-handout.md)
   - 🎮 [Driver Station & Game Tools](background/driver-station.md)
-  - ✅ [Setup Checklist](background/setup-checklist.md)
 - 💻 [Java Basics](background/java-basics.md)
   - [Getting started with Java comments](background/javabasics/PartOne_Comments.md)
   - [Getting started with Java Variables](background/javabasics/PartTwo_Variables.md)
