@@ -52,7 +52,8 @@ public boolean setMotorSpeed(int speed) {
 ---
 
 ## Best Paractices
-- Always comment why, not what - code itself should be readable
+- Always comment why, not what 
+- code itself should be readable
 - Use javadoc for public methods and classes
 - avoid excessive commenting; clear code reduces the need for comments with simple to read commetns
 - use multi-line comments for sections of code that are temporarily disabled otherwise known as "commented out"
