@@ -14,11 +14,11 @@ Java is the programming language BobcatRobotics uses to program it's robot. Thes
 - Students should pass the knowledge quiz at the end of this section
 
 ## Lessons
-- [Getting started with Java comments](javabasics/PartOne_Comments.md)
-- [Getting started with Java Variables](javabasics/PartTwo_Variables.md)
-- [Getting Started with Math in Java](javabasics/PartThree_Math.md)
-- [Getting Started with Java Methods](javabasics/PartFour_Methods.md)
-- [Getting Started with Boolean Logic Operations](javabasics/PartFive_BooleanLogicOperations.md)
-- [Getting Started with Comparison Operations](javabasics/PartSix_ComparisonOperations.md)
-- [if ... else if... else... control flow](javabasics/PartSeven_ComparisonOperators.md)
-- [Getting Started with Java Classes](javabasics/PartEight_Classes.md)
+- [Getting started with Java comments](background/javabasics/PartOne_Comments.md)
+- [Getting started with Java Variables](background/javabasics/PartTwo_Variables.md)
+- [Getting Started with Math in Java](background/javabasics/PartThree_Math.md)
+- [Getting Started with Java Methods](background/javabasics/PartFour_Methods.md)
+- [Getting Started with Boolean Logic Operations](background/javabasics/PartSix_BooleanOperators.md)
+- [Getting Started with Comparison Operations](background/javabasics/PartSeven_ComparisonOperators.md)
+- [if ... else if... else... control flow](Pbackground/javabasics/PartFive_IfElseIfElse.md)
+- [Getting Started with Java Classes](background/javabasics/PartEight_Classes.md)
