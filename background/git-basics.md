@@ -10,7 +10,6 @@ This guide introduces the basics and best practices for FRC teams.
 - Commit and push changes to GitHub
 - Merge and pull updates
 
-
 ---
 
 ## 1️⃣ Installing Git

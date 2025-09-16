@@ -29,6 +29,7 @@ Welcome! This quick start guide will get you set up for FRC Programming Training
 - 🔧 [Git Basics](background/git-basics.md)
 - 🌐 [Team Git Workflow](background/team-git-workflow.md)
 - 📏 [Code Standards & Code Quality](background/code-standards.md)
+- 📏 [Automating build & Tests](background/automating-tests.md)
 
 ## Architecture
 - 🏗️ [WPILib Overview](architecture/wpilib-overview.md)
