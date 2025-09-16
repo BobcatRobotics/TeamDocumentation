@@ -1,10 +1,4 @@
-# FRC Fall Training - Quick Start
-
-Welcome! This quick start guide will get you set up for FRC Programming Training.
-
----
-
-# FRC Fall Training - Quick Start
+# FRC Programming - Quick Start
 
 Welcome! This quick start guide will get you set up for FRC Programming Training.
 
@@ -29,7 +23,7 @@ Welcome! This quick start guide will get you set up for FRC Programming Training
 - 🔧 [Git Basics](background/git-basics.md)
 - 🌐 [Team Git Workflow](background/team-git-workflow.md)
 - 📏 [Code Standards & Code Quality](background/code-standards.md)
-- 📏 [Automating build & Tests](background/automating-tests.md)
+- 📏 [Automating build & Tests](background/automating-buildandtests.md)
 
 ## Architecture
 - 🏗️ [WPILib Overview](architecture/wpilib-overview.md)
@@ -37,10 +31,16 @@ Welcome! This quick start guide will get you set up for FRC Programming Training
 
 ## ROMI Lessons
 - 🤖 [Command-Based Programming](romi/command-based-programming.md)
+  - [Quiz One](romi/QuizOne.md)
 - 🛠️ [Subsystems](romi/subsystems.md)
+  - [Subsystem Lesson](romi/subsystem-lesson.md)
+  - [Quiz Two](romi/QuizOne.md)
 - 🎯 [Commands](romi/commands.md)
+  - [Quiz Three](romi/QuizOne.md)
 - 📊 [AdvantageKit & Logging](romi/advantagekit-logging.md)
+  - [Quiz Four](romi/QuizOne.md)
 - 🖥️ [Simulation](romi/simulation.md)
+  - [Quiz Five](romi/QuizOne.md)
 
 ## Advanced Topics
 - 🌀 [Swerve Drive](advanced/swerve-drive.md)
