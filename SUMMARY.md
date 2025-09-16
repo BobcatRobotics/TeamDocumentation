@@ -24,6 +24,7 @@ Welcome! This quick start guide will get you set up for FRC Programming Training
 - 🌐 [Team Git Workflow](background/team-git-workflow.md)
 - 📏 [Code Standards & Code Quality](background/code-standards.md)
 - 📏 [Automating build & Tests](background/automating-buildandtests.md)
+- [Managing Vendor Libraries](background/vendor-libraries.md)
 
 ## Architecture
 - 🏗️ [WPILib Overview](architecture/wpilib-overview.md)
@@ -36,8 +37,11 @@ Welcome! This quick start guide will get you set up for FRC Programming Training
   - [Subsystem Lesson](romi/subsystem-lesson.md)
   - [Quiz Two](romi/QuizOne.md)
 - 🎯 [Commands](romi/commands.md)
-  - [Quiz Three](romi/QuizOne.md)
+  - [Commands Version 2](romi/commands-version2.md)
+  - [Commands Activity](romi/commands-activity.md)
+  - [Quiz Three](romi/QuizThree.md)
 - 📊 [AdvantageKit & Logging](romi/advantagekit-logging.md)
+  - [AdvantageKit Lesson](romi/advantagekit-lesson.md)
   - [Quiz Four](romi/QuizOne.md)
 - 🖥️ [Simulation](romi/simulation.md)
   - [Quiz Five](romi/QuizOne.md)
