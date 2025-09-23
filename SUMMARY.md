@@ -42,9 +42,11 @@ Welcome! This quick start guide will get you set up for FRC Programming Training
   - [Quiz Three](romi/QuizThree.md)
 - 📊 [AdvantageKit & Logging](romi/advantagekit-logging.md)
   - [AdvantageKit Lesson](romi/advantagekit-lesson.md)
-  - [Quiz Four](romi/QuizOne.md)
+  - [Quiz Four](romi/QuizFour.md)
+- 🖥️ [UnitTesting](romi/unittesting.md)
+  - [Quiz Five](romi/QuizFive.md)
 - 🖥️ [Simulation](romi/simulation.md)
-  - [Quiz Five](romi/QuizOne.md)
+  - [Quiz Six](romi/QuizSix.md)
 
 ## Advanced Topics
 - 🌀 [Swerve Drive](advanced/swerve-drive.md)

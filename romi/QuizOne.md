@@ -4,7 +4,7 @@
 
 1. What is the primary purpose of **Command-Based Programming** in WPILib?  
    a) To control the Driver Station  
-   b) To organize robot behavior into modular, reusable units  
+   b) To organize robot behavior into organized, modular, and reusable units  
    c) To make the robot move faster  
    d) To configure CAN devices automatically  
 

@@ -46,7 +46,7 @@
 
 ## Short Answer
 
-8. Explain the advantages of using functional commands (lambdas) over full command classes.  
+8. Explain the advantages of using functional commands over full command classes.  
 
 9. How do `SequentialCommandGroup` and `ParallelCommandGroup` differ in executing commands?  
 
