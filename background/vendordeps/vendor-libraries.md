@@ -76,9 +76,9 @@ Vendor libraries (vendordeps) allow your robot project to use hardware-specific 
 
 You can also add a vendordep directly from the command line:
 
-\`\`\`bash
-./gradlew vendordep --url=<vendor_json_url>
-\`\`\`
+```bash
+./gradlew vendordep --url=vendor_json_url
+```
 
 This places the JSON into your project automatically.
 

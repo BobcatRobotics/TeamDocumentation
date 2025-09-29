@@ -65,3 +65,5 @@ Use the "live share" extension in Visual Code as you write your robot code. This
 
 ## Summary
 Pair programming in FRC improves **code quality, team learning, and collaboration**. By sharing knowledge and encouraging communication, teams can become more resilient, efficient, and better prepared for competitions. It’s not just about writing code faster—it’s about **building a stronger programming team**.
+
+
