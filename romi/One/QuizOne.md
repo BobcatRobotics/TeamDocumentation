@@ -1,67 +1,67 @@
-# Quiz: Command-Based Programming with WPILib on the ROMI Robot
+# Quiz: Programming the Romi
 
-## Multiple Choice
-
-1. What is the primary purpose of **Command-Based Programming** in WPILib?  
-   a) To control the Driver Station  
-   b) To organize robot behavior into organized, modular, and reusable units  
-   c) To make the robot move faster  
-   d) To configure CAN devices automatically  
-
-2. Which of the following is considered a **subsystem**?  
-   a) DriveForward command  
-   b) Drivetrain  
-   c) Joystick button  
-   d) Timer  
-
-3. What is the role of a **command** in WPILib?  
-   a) To configure the radio connection  
-   b) To schedule and control the behavior of subsystems  
-   c) To deploy the robot code to the ROMI  
-   d) To monitor battery voltage  
-
-4. Which method in a Command is used to determine when it should finish?  
-   a) initialize()  
-   b) execute()  
-   c) isFinished()  
-   d) end()  
+This quiz will check your understanding of how to create and run a Romi program using WPILib.
 
 ---
 
-## True/False
+## Multiple Choice
 
-5. The **Scheduler** ensures that multiple commands do not conflict over the same subsystem.  
-   - True  
-   - False  
+1. Which of the following is **NOT** required before starting to program the Romi?
+   - A) Visual Studio Code with WPILib installed  
+   - B) A joystick or gamepad  
+   - C) A Romi robot with batteries  
+   - D) A roboRIO with a radio attached  
 
-6. The **Default Command** is automatically run by a subsystem when no other commands are using it.  
-   - True  
-   - False  
+---
 
-7. Command-Based Programming is only useful for full-size FRC robots, not ROMI robots.  
-   - True  
-   - False  
+2. When creating a new Romi project, which example should you select in VS Code?  
+   - A) RomiExample  
+   - B) RomiReference  
+   - C) TimedRobot  
+   - D) Command-Based  
+
+---
+
+3. How does the Romi differ from a full FRC robot when running code?  
+   - A) The Romi uses the roboRIO to deploy code.  
+   - B) The Romi code runs on the laptop using simulation.  
+   - C) The Romi code runs only in the Driver Station.  
+   - D) The Romi cannot use WPILib tools.  
+
+---
+
+4. If your Romi is connected to a custom WiFi network, what file must be updated with the new IP address?  
+   - A) `settings.json`  
+   - B) `robot.java`  
+   - C) `build.gradle`  
+   - D) `networktables.ini`  
+
+---
+
+5. Which console message confirms that your laptop successfully connected to the Romi?  
+   - A) `Deploy complete`  
+   - B) `HALSimWS: WebSocket Connected`  
+   - C) `Robot Enabled`  
+   - D) `Connection Lost`  
 
 ---
 
 ## Short Answer
 
-8. What is the purpose of the `addRequirements()` method in a Command?  
+6. What command do you run in VS Code to start the Romi simulation?  
 
-9. In the example `DriveForward` command, what is the role of the `Timer`?  
+---
 
-10. Name two benefits of using the Command-Based programming structure.  
+7. Explain one advantage of using a **simulation framework** for the Romi instead of deploying code directly to the robot.  
 
-11. Describe how a command can be bound to a joystick button in `RobotContainer.java`.  
+---
 
-12. What is the main difference between deploying code to a **real FRC robot** versus the **Romi**?
+8. List two possible troubleshooting steps if your Romi doesn’t connect properly.  
 
-13. Why do you think WPILib uses a **simulation framework** for the Romi instead of direct code deployment?
+---
 
-14. If your Romi doesn’t connect, what are two possible troubleshooting steps you could try?
+## Challenge Question
 
-15. How might you extend the Romi project to do more than just drive (for example, follow a line or use sensors)?
+9. Imagine you want the Romi to print “Hello, Romi!” whenever it is enabled. Where in your project’s code would you add this behavior?  
 
-## Bonus Question
-
-16. Explain how you would create a **SequentialCommandGroup** to make the ROMI robot drive forward, turn, and then drive forward again.  
+---
