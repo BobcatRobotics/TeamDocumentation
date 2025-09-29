@@ -37,7 +37,7 @@ In this activity, you will learn how to create and run your first program for th
 ## Part 2: Run Your Romi Program
 
 1. Power on your **Romi robot**.
-2. Connect your laptop to the WiFi network broadcast by the Romi (`WPILibPi-<number>`).
+2. Connect your laptop to the WiFi network broadcast by the Romi (`bobcats-<number>`).
 3. If your Romi uses a **custom WiFi network**, update the IP address in `build.gradle`:
    ```gradle
    wpi.sim.envVar("HALSIMWS_HOST", "10.0.0.2")
