@@ -117,16 +117,7 @@ import edu.wpi.first.wpilibj.motorcontrol.Spark;
 
 ---
 
-## Step 5: Create commands
-Write 4 commands too implement drive forward,reverse,turn left, turn right.
-
----
-## Step 3: Bind Commands in RobotContainer
-Create button bindings for each of the commands you have implemented.
-
----
-
-## Step 4: Best Practices
+## Step 5: Best Practices
 
 1. Keep each subsystem focused on a single mechanism.
 2. Expose only the methods needed by commands.
