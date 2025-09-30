@@ -42,84 +42,87 @@ By the end of this lesson, students will be able to:
 
 ---
 
-## Step 1: Create a Subsystem
-
-### Example: Drivetrain Subsystem
+## Step 1: Drivetrain Subsystem Imports
 
 ```java
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.Spark;
-
-public class Drivetrain extends SubsystemBase {
-    private final Spark leftMotor = new Spark(0);
-    private final Spark rightMotor = new Spark(1);
-    private final DifferentialDrive drive = new DifferentialDrive(leftMotor, rightMotor);
-
-    public Drivetrain() {
-        // Initialize motors or sensors if needed
-    }
-
-    public void arcadeDrive(double forward, double rotation) {
-        drive.arcadeDrive(forward, rotation);
-    }
-}
 ```
 
 ---
 
-## Step 2: Create Commands for the Subsystem
-
-### Example: DriveForward Command
+## Step 2: Drivetrain Subsystem Properties
 
 ```java
-import edu.wpi.first.wpilibj2.command.CommandBase;
-import edu.wpi.first.wpilibj.Timer;
+  private static final double kCountsPerRevolution = 1440.0;
+  private static final double kWheelDiameterInch = 2.75591; // 70 mm
 
-public class DriveForward extends CommandBase {
-    private final Drivetrain drivetrain;
-    private final Timer timer = new Timer();
+  // The Romi has the left and right motors set to
+  // PWM channels 0 and 1 respectively
+  private final Spark m_leftMotor = new Spark(0);
+  private final Spark m_rightMotor = new Spark(1);
 
-    public DriveForward(Drivetrain subsystem) {
-        drivetrain = subsystem;
-        addRequirements(drivetrain);
-    }
+  // The Romi has onboard encoders that are hardcoded
+  // to use DIO pins 4/5 and 6/7 for the left and right
+  private final Encoder m_leftEncoder = new Encoder(4, 5);
+  private final Encoder m_rightEncoder = new Encoder(6, 7);
 
-    @Override
-    public void initialize() {
-        timer.reset();
-        timer.start();
-    }
+  // Set up the differential drive controller
+  private final DifferentialDrive m_diffDrive =
+      new DifferentialDrive(m_leftMotor::set, m_rightMotor::set);
 
-    @Override
-    public void execute() {
-        drivetrain.arcadeDrive(0.5, 0.0);
-    }
+  // Set up the RomiGyro
+  private final RomiGyro m_gyro = new RomiGyro();
 
-    @Override
-    public void end(boolean interrupted) {
-        drivetrain.arcadeDrive(0, 0);
-    }
-
-    @Override
-    public boolean isFinished() {
-        return timer.get() > 2.0;
-    }
-}
+  // Set up the BuiltInAccelerometer
+  private final BuiltInAccelerometer m_accelerometer = new BuiltInAccelerometer();
 ```
 
 ---
 
+## Step 3: Create Constructor for the subsystem
+
+```java
+  /** Creates a new Drivetrain. */
+  public Drivetrain() {
+    SendableRegistry.addChild(m_diffDrive, m_leftMotor);
+    SendableRegistry.addChild(m_diffDrive, m_rightMotor);
+
+    // We need to invert one side of the drivetrain so that positive voltages
+    // result in both sides moving forward. Depending on how your robot's
+    // gearbox is constructed, you might have to invert the left side instead.
+    m_rightMotor.setInverted(true);
+
+    // Use inches as unit for encoder distances
+    m_leftEncoder.setDistancePerPulse((Math.PI * kWheelDiameterInch) / kCountsPerRevolution);
+    m_rightEncoder.setDistancePerPulse((Math.PI * kWheelDiameterInch) / kCountsPerRevolution);
+    resetEncoders();
+  }
+```
+
+---
+
+## Step 4: Create methods
+
+```java
+  public void arcadeDrive(double xaxisSpeed, double zaxisRotate) {
+    m_diffDrive.arcadeDrive(xaxisSpeed, zaxisRotate);
+  }
+  public void resetEncoders() {
+    m_leftEncoder.reset();
+    m_rightEncoder.reset();
+  }
+```
+
+---
+
+## Step 5: Create commands
+Write 4 commands too implement drive forward,reverse,turn left, turn right.
+
+---
 ## Step 3: Bind Commands in RobotContainer
-
-```java
-private final Joystick controller = new Joystick(0);
-
-private void configureButtonBindings() {
-    new JoystickButton(controller, 1)
-        .whenPressed(new DriveForward(drivetrain));
-}
-```
+Create button bindings for each of the commands you have implemented.
 
 ---
 
@@ -133,8 +136,6 @@ private void configureButtonBindings() {
 ---
 
 ## Step 5: Extension Ideas
-
-* Create subsystems for shooter, intake, or arm mechanisms.
 * Use encoders or gyros for feedback in subsystem methods.
 * Combine multiple commands using `SequentialCommandGroup` or `ParallelCommandGroup`.
 

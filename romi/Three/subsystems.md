@@ -6,10 +6,6 @@ In **Command-Based Programming**, a **Subsystem** represents a distinct hardware
 Subsystems encapsulate the robot's hardware (motors, sensors, solenoids) and provide methods for controlling them. This keeps code organized, modular, and reusable.
 
 ---
-## Goals
-- Write a drivetrain subsystem
-- Write an arm subsystem
-- Assign default commands to subsystems
 
 ## Key Concepts
 
@@ -29,27 +25,56 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.Spark;
 ```
 
-### Step 2: Define the Subsystem Class
+---
 
-Example: `Drivetrain` subsystem for a differential drive robot.
+### Step 2: Define the Subsystem Properties
+
+Example: `Drivetrain` subsystem from the RomiReference Example.
 
 ```java
-public class Drivetrain extends SubsystemBase {
-    private final Spark leftMotor = new Spark(0);
-    private final Spark rightMotor = new Spark(1);
-    private final DifferentialDrive drive = new DifferentialDrive(leftMotor, rightMotor);
+  private static final double kCountsPerRevolution = 1440.0;
+  private static final double kWheelDiameterInch = 2.75591; // 70 mm
 
-    // Constructor
-    public Drivetrain() {
-        // Initialization code here
-    }
+  // The Romi has the left and right motors set to
+  // PWM channels 0 and 1 respectively
+  private final Spark m_leftMotor = new Spark(0);
+  private final Spark m_rightMotor = new Spark(1);
 
-    // Method to drive the robot using arcade controls
-    public void arcadeDrive(double forward, double rotation) {
-        drive.arcadeDrive(forward, rotation);
-    }
-}
+  // The Romi has onboard encoders that are hardcoded
+  // to use DIO pins 4/5 and 6/7 for the left and right
+  private final Encoder m_leftEncoder = new Encoder(4, 5);
+  private final Encoder m_rightEncoder = new Encoder(6, 7);
+
+  // Set up the differential drive controller
+  private final DifferentialDrive m_diffDrive =
+      new DifferentialDrive(m_leftMotor::set, m_rightMotor::set);
+
+  // Set up the RomiGyro
+  private final RomiGyro m_gyro = new RomiGyro();
+
+  // Set up the BuiltInAccelerometer
+  private final BuiltInAccelerometer m_accelerometer = new BuiltInAccelerometer();
 ```
+
+---
+
+### Step 3: Define the Subsystem constructor
+
+Constructor must implement any 'final' properties.
+Set up or configure any motors , encoders, sensors.
+
+---
+
+### Step 4: Define the Subsystem methods
+
+Implement any methods , almost always include a manual control mode 
+as well as methods to read encoders and stop any motors.
+
+---
+
+### Step 5: Define the Subsystem Commands
+
+Implement any commands to automate specific features. For example automating the control of a motor to a specific velocity or position.
 
 ---
 
