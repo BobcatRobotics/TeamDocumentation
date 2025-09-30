@@ -52,7 +52,7 @@ By the end of this lesson, students should be able to:
 2. Select **Template: Command-Based**.
 3. Language: **Java**.
 4. Project type: **Romi**.
-5. Name your project `RomiCommandDemo`.
+5. Name your project `LessonTwo`.
 
 ---
 
@@ -63,59 +63,57 @@ By the end of this lesson, students should be able to:
 * Use the built-in `DifferentialDrive` class from WPILib.
 * Connect it to the ROMI’s motors.
 
-```java
-public class Drivetrain extends SubsystemBase {
-    private final DifferentialDrive drive;
-
-    private final Spark leftMotor = new Spark(0);
-    private final Spark rightMotor = new Spark(1);
-
-    public Drivetrain() {
-        drive = new DifferentialDrive(leftMotor, rightMotor);
-    }
-
-    public void arcadeDrive(double forward, double rotation) {
-        drive.arcadeDrive(forward, rotation);
-    }
-}
-```
-
 ---
 
 ## Step 3: Create Commands
 
-### Example: Drive Forward Command
+### Example: Arcade Drive Command
+
+This command when executed will accept input from two joysticks and drive accordingly.
 
 ```java
-public class DriveForward extends CommandBase {
-    private final Drivetrain drivetrain;
-    private final Timer timer = new Timer();
+public class ArcadeDrive extends Command {
+  private final Drivetrain m_drivetrain;
+  private final Supplier<Double> m_xaxisSpeedSupplier;
+  private final Supplier<Double> m_zaxisRotateSupplier;
 
-    public DriveForward(Drivetrain subsystem) {
-        drivetrain = subsystem;
-        addRequirements(drivetrain);
-    }
+  /**
+   * Creates a new ArcadeDrive. This command will drive your robot according to the speed supplier
+   * lambdas. This command does not terminate.
+   *
+   * @param drivetrain The drivetrain subsystem on which this command will run
+   * @param xaxisSpeedSupplier Lambda supplier of forward/backward speed
+   * @param zaxisRotateSupplier Lambda supplier of rotational speed
+   */
+  public ArcadeDrive(
+      Drivetrain drivetrain,
+      Supplier<Double> xaxisSpeedSupplier,
+      Supplier<Double> zaxisRotateSupplier) {
+    m_drivetrain = drivetrain;
+    m_xaxisSpeedSupplier = xaxisSpeedSupplier;
+    m_zaxisRotateSupplier = zaxisRotateSupplier;
+    addRequirements(drivetrain);
+  }
 
-    @Override
-    public void initialize() {
-        timer.reset();
-        timer.start();
-    }
+  // Called when the command is initially scheduled.
+  @Override
+  public void initialize() {}
 
-    @Override
-    public void execute() {
-        drivetrain.arcadeDrive(0.5, 0.0); // drive forward at half speed
-    }
+  // Called every time the scheduler runs while the command is scheduled.
+  @Override
+  public void execute() {
+    m_drivetrain.arcadeDrive(m_xaxisSpeedSupplier.get(), m_zaxisRotateSupplier.get());
+  }
 
-    @Override
-    public void end(boolean interrupted) {
-        drivetrain.arcadeDrive(0, 0); // stop
-    }
+  // Called once the command ends or is interrupted.
+  @Override
+  public void end(boolean interrupted) {}
 
-    @Override
-    public boolean isFinished() {
-        return timer.get() > 2.0; // stop after 2 seconds
-    }
+  // Returns true when the command should end.
+  @Override
+  public boolean isFinished() {
+    return false;
+  }
 }
 ```
 
@@ -123,14 +121,15 @@ public class DriveForward extends CommandBase {
 
 ## Step 4: Bind Commands to Controls
 
-In `RobotContainer.java`, set up controller bindings.
+In `RobotContainer.java`, set up controller bindings. drivetrain is the instance of the subysystem.
 
 ```java
-private final Joystick controller = new Joystick(0);
+private final Drivetrain m_drivetrain = new Drivetrain();
+private final Joystick m_controller = new Joystick(0);
 
 private void configureButtonBindings() {
-    new JoystickButton(controller, 1) // Button A
-        .whenPressed(new DriveForward(drivetrain));
+    drivetrain.setDefaultCommand(new ArcadeDrive(
+        drivetrain, () -> -m_controller.getRawAxis(1), () -> -m_controller.getRawAxis(2))));
 }
 ```
 
@@ -142,11 +141,12 @@ In `RobotContainer.java`, return an autonomous command.
 
 ```java
 public Command getAutonomousCommand() {
-    return new DriveForward(drivetrain);
+    return new ArcadeDrive(
+        drivetrain, () -> -1, () -> 0);
 }
 ```
 
-This makes the ROMI drive forward for 2 seconds during autonomous.
+This makes the ROMI drive forward during autonomous.
 
 ---
 
@@ -167,7 +167,6 @@ This makes the ROMI drive forward for 2 seconds during autonomous.
 
 * Use **command groups** (`SequentialCommandGroup`, `ParallelCommandGroup`) for multi-step routines.
 * Add the **Onboard Encoder** and **Gyro** from the ROMI for feedback-based commands.
-* Create a **Default Command** for the drivetrain that maps joystick input to movement.
 
 ---
 

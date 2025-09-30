@@ -36,6 +36,9 @@ The easiest way to install WPILib is by following the official setup guide:
 
 ### Steps (summary from official docs):
 1. Download the WPILib installer for your operating system from [GitHub Releases](https://github.com/wpilibsuite/allwpilib/releases).
+   - [Windows](https://packages.wpilib.workers.dev/installer/v2025.3.2/Win64/WPILib_Windows-2025.3.2.iso)
+   - [MacOsX - Arm](https://packages.wpilib.workers.dev/installer/v2025.3.2/macOSArm/WPILib_macOS-Arm64-2025.3.2.dmg)
+   - [MacOsX - Intel](https://packages.wpilib.workers.dev/installer/v2025.3.2/macOS/WPILib_macOS-Intel-2025.3.2.dmg)
 2. Run the installer and follow the prompts.  
    - On Windows: run the `.exe` file  
    - On macOS/Linux: extract and run the install script  
