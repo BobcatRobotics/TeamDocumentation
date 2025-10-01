@@ -7,7 +7,6 @@ Welcome! This quick start guide will get you set up for FRC Programming Training
 # Summary
 
 ## Background
-- [Gitbooks Installation](background/setup/gitbooks-installation.md)
 - [Setup Checklist](background/install/setup-checklist-handout.md)
   - ✅ [WPILib Requirements & Installation](background/install/application-requirements.md)
   - 🎮 [Driver Station & Game Tools](background/install/driver-station.md)

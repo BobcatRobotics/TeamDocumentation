@@ -54,7 +54,7 @@ In this activity, you will learn how to create and run your first program for th
 
 ---
 
-## Part 3: Adding to the defautl Program
+## Part 3: Adding to the default Program
 
 Modify your Romi project to:
 - Print a message to the console whenever the robot is enabled.
