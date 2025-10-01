@@ -99,7 +99,7 @@ public class ArcadeDrive extends Command {
   @Override
   public void initialize() {}
 
-  // Called every time the scheduler runs while the command is scheduled.
+  // Called every time the scheduler runs while the command is scheduled. Takes in the joystick values as the speed and rotation of the romi.
   @Override
   public void execute() {
     m_drivetrain.arcadeDrive(m_xaxisSpeedSupplier.get(), m_zaxisRotateSupplier.get());

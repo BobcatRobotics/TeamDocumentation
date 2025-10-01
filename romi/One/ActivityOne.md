@@ -54,12 +54,10 @@ In this activity, you will learn how to create and run your first program for th
 
 ---
 
-## Extension Challenge (Optional)
+## Part 3: Adding to the defautl Program
 
 Modify your Romi project to:
 - Print a message to the console whenever the robot is enabled.
-- Change the default driving speed of the Romi.
-- Add a simple autonomous command (e.g., drive forward for 2 seconds).
 
 ---
 

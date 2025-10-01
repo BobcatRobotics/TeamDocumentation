@@ -38,15 +38,7 @@ You will design subsystems and commands, bind them to controller inputs, and tes
 ---
 
 ### Step 3: Write the ArcadeDrive Command
-- Create an `ArcadeDrive.java` file.  
-- Use joystick input to drive the robot:
-
-```java
-@Override
-public void execute() {
-  m_drivetrain.arcadeDrive(m_xaxisSpeedSupplier.get(), m_zaxisRotateSupplier.get());
-}
-```
+- Modify the `ArcadeDrive.java` file. Add a 1/2 speed button that will reduce the input of the speed suppliers. When this button is TOGGLED the speed of the romi will be full or 1/2 speed.
 
 ---
 
@@ -62,6 +54,8 @@ drivetrain.setDefaultCommand(
   )
 );
 ```
+- Make sure to bind your button that will turn the 1/2 speed on and off.
+
 
 ---
 
